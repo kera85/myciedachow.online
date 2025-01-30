@@ -13,7 +13,6 @@
 
   <style>
     :root {
-      /* Zmienne dotyczące nawigacji i hero */
       --navbar-height: 10vh;
       --icon-logo-height: 10vh;
       --hero-font-size: 3vw;
@@ -43,18 +42,15 @@
       overflow: hidden;
       border-radius: var(--navbar-border-radius);
     }
-
     .navbar-brand {
       display: flex;
       align-items: center;
     }
-
     .navbar-brand .icon-only {
       height: var(--icon-logo-height);
       margin-right: 10px;
     }
 
-    /* Nawigacja */
     .navbar-nav {
       display: flex;
       align-items: center;
@@ -62,15 +58,13 @@
       width: auto;
       gap: 10px;
     }
-
     .navbar-nav .nav-link {
       color: #333 !important;
       font-weight: bold;
       padding: 20px 30px;
     }
-
     .navbar-nav .nav-link.active {
-      color: #005EA8 !important; /* Zmieniono z #007bff */
+      color: #005EA8 !important;
     }
 
     /* Sekcja hero */
@@ -100,109 +94,122 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
-
     .hero h3 {
       font-size: var(--hero-paragraph-font-size);
       font-weight: bold;
       margin-bottom: 20px;
-      color: #005EA8; /* Zmieniono z #007bff */
+      color: #005EA8;
     }
-
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 20px;
       color: black;
     }
-
     .hero .btn {
       font-size: 1.3rem;
     }
 
-   /* RESPONSYWNOŚĆ */
-@media (max-width: 768px) {
-  :root {
-    --navbar-padding-horizontal: 5vw;
-    --navbar-height: 5vh;
-    --icon-logo-height: 7vh;
-    --navbar-margin-top: 0;
+    /* Baner promocyjny (przeniesione z offer.html) */
+    .promo-banner {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 180, 227, 0.8);
+      color: #000;
+      padding: 15px 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-radius: 8px;
+      z-index: 999;
+      animation: blink 1.5s infinite ease-in-out;
+    }
 
-    --hero-font-size-mobile: 7vw;
-    --hero-paragraph-font-size-mobile: 5vw;
-    --hero-p-font-size-mobile: 4vw;
-  }
+    @keyframes blink {
+      0%   { opacity: 1; }
+      50%  { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
 
-  .navbar {
-    width: 100%;
-    padding: 2px; /* Zmniejszony padding */
-    left: 0;
-    top: 0;
-    border-radius: 0;
-    height: auto;
-    display: block;
-    text-align: center;
-  }
+    @media (max-width: 768px) {
+      :root {
+        --navbar-padding-horizontal: 5vw;
+        --navbar-height: 5vh;
+        --icon-logo-height: 7vh;
+        --navbar-margin-top: 0;
 
-  /* Logo / nazwa w navbarze */
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5px;  /* Zmniejszony margines z 10px na 5px */
-    font-size: 0.9rem;   /* Przykładowe zmniejszenie czcionki */
-  }
+        --hero-font-size-mobile: 7vw;
+        --hero-paragraph-font-size-mobile: 5vw;
+        --hero-p-font-size-mobile: 4vw;
+      }
 
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin: 0 auto;
-  }
+      .navbar {
+        width: 100%;
+        padding: 2px;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+        height: auto;
+        display: block;
+        text-align: center;
+      }
 
-  .navbar-nav .nav-item {
-    flex: none;
-    text-align: center;
-    margin: 0 5px;       /* Dodany margines między pozycjami menu */
-  }
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
 
-  /* Jeśli korzystasz z klas .nav-link do stylowania linków w menu */
-  .navbar-nav .nav-link {
-    font-size: 0.9rem;   /* Zmniejszony rozmiar czcionki linków */
-    padding: 6px 8px;    /* Mniejszy padding dla linków */
-  }
+      .navbar-nav {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: 0 auto;
+      }
+      .navbar-nav .nav-item {
+        flex: none;
+        text-align: center;
+        margin: 0 5px;
+      }
+      .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+      }
 
       .hero {
         justify-content: center;
         padding-left: 0;
         text-align: center;
       }
-
       .hero .content {
         padding: 10px;
         max-width: 90%;
       }
-
       .hero h1 {
         font-size: var(--hero-font-size-mobile);
       }
-
       .hero h3 {
         font-size: var(--hero-paragraph-font-size-mobile);
       }
-
       .hero p {
         font-size: var(--hero-p-font-size-mobile);
       }
-
       .hero .btn {
         font-size: 3vw;
       }
-    }
 
-    /* Animacja "mrugania" przycisku z telefonem */
-    @keyframes blink {
-      0%   { opacity: 1; }
-      50%  { opacity: 0.5; }
-      100% { opacity: 1; }
+      /* Wersja mobilna banera – przyklejenie go do dołu ekranu */
+      .promo-banner {
+        position: fixed;
+        top: auto;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.4rem;
+      }
     }
 
     .call-link {
@@ -213,22 +220,8 @@
       font-weight: bold;
       animation: blink 1.5s infinite ease-in-out;
     }
-
     .call-link:hover {
       text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .navbar-collapse {
-        max-height: 65vh;
-        overflow-y: auto; 
-      }
-      .nav-link {
-        padding: 15px;
-      }
-      .nav-item {
-        margin: 5px 0;
-      }
     }
   </style>
 </head>
@@ -261,9 +254,15 @@
 
   <!-- Hero Section -->
   <div class="hero">
+    <!-- Baner promocyjny na tle zdjęcia -->
+    <div class="promo-banner">
+      Cena za m² już od 10 zł!
+    </div>
     <div class="content">
       <h3><span>Wysokociśnieniowe mycie elewacji i dachów – Profesjonalnie i w świetnej cenie!</span></h3>
-      <p>Zadbaj o czystość oraz estetyczny wygląd swojego domu lub firmy dzięki usługom mycia ciśnieniowego świadczonym przez nasz doświadczony zespół. Gwarantujemy konkurencyjne stawki oraz najwyższą jakość wykonania.</p>
+      <p>
+        Zadbaj o czystość oraz estetyczny wygląd swojego domu lub firmy dzięki usługom mycia ciśnieniowego świadczonym przez nasz doświadczony zespół. Gwarantujemy konkurencyjne stawki oraz najwyższą jakość wykonania.
+      </p>
       <a href="offer.html" class="btn btn-primary">Sprawdź ofertę</a>
     </div>
   </div>
