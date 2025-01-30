@@ -13,6 +13,8 @@
 
   <style>
     :root {
+      --brand-color-dark: #005EA8;
+      --brand-color-light: #00B4E3;
       --navbar-height: 10vh;
       --icon-logo-height: 10vh;
       --text-logo-height: 24vh;
@@ -69,7 +71,7 @@
       padding: 20px 30px;
     }
     .navbar-nav .nav-link.active {
-      color: #007bff !important;
+      color: var(--brand-color-dark) !important; /* ZMIANA */
     }
     .hero {
       position: relative;
@@ -94,14 +96,14 @@
       font-size: var(--hero-paragraph-font-size);
       font-weight: bold;
       margin-bottom: 20px;
-      color: #007bff;
+      color: var(--brand-color-dark); /* ZMIANA */
     }
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 20px;
       color: black;
     }
-    /* Formularz */
+    /* Formularz i przycisk */
     .contact-form .form-control {
       margin-bottom: 15px;
     }
@@ -109,6 +111,16 @@
       font-size: 0.9rem;
       line-height: 1.4;
     }
+    .btn-primary {
+      background-color: var(--brand-color-dark);
+      border-color: var(--brand-color-dark);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #004080;
+      border-color: #004080;
+    }
+
     /* RESPONSYWNOŚĆ */
     @media (max-width: 768px) {
       :root {
@@ -182,7 +194,7 @@
     }
     .call-link {
       display: inline-block;
-      color: #007bff !important;
+      color: var(--brand-color-dark) !important; /* ZMIANA */
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: bold;
@@ -207,9 +219,6 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Strona<br>główna</a>
         </li>
-     <!--   <li class="nav-item">-->
-     <!--     <a class="nav-link" href="about.html">O nas</a>-->
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="offer.html">Oferta</a>
         </li>
@@ -217,7 +226,7 @@
           <a class="nav-link active" href="contact.html">Kontakt</a>
         </li>
         <li class="nav-item text-center">
-          <a class="call-link" href="tel:+48123456789" style="color: #007bff!important;">
+          <a class="call-link" href="tel:+48123456789">
             <span><strong>Zadzwoń</strong><br>+48 123 456 789</span>
           </a>
         </li>
@@ -238,25 +247,4 @@
         <!-- Przykładowy formularz (Formspree) -->
         <form id="contactForm" action="https://formspree.io/f/xeojqbwn" method="POST">
           <input type="text" name="name" class="form-control" placeholder="Imię" required>
-          <input type="email" name="email" class="form-control" placeholder="Adres e-mail" required>
-          <input type="text" name="subject" class="form-control" placeholder="Temat" required>
-          <textarea name="message" class="form-control" rows="4" placeholder="Twoje zapytanie" required></textarea>
-          
-          <div class="form-group form-check text-left">
-            <input type="checkbox" class="form-check-input" id="consentCheck" required>
-            <label class="form-check-label" for="consentCheck">
-              Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie adres e-mail informacji dotyczących świadczonych usług. Zgoda może zostać cofnięta w każdym czasie.*
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS + Popper.js -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+          <input type="email" name="email" class="
