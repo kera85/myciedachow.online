@@ -13,20 +13,23 @@
 
   <style>
     :root {
+      /* Kluczowe zmienne (bez zbędnych odniesień do tekstowego logo) */
       --navbar-height: 10vh;
       --icon-logo-height: 10vh;
-      --text-logo-height: 24vh;
       --hero-font-size: 3vw;
       --hero-paragraph-font-size: 2vw;
       --navbar-padding-horizontal: 10vw;
       --navbar-border-radius: 10px;
       --navbar-margin-top: 20px;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       font-size: 1.1rem;
       margin: 0;
     }
+
+    /* Navbar */
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -48,18 +51,12 @@
       height: var(--icon-logo-height);
       margin-right: 10px;
     }
-    .navbar-brand .logo-container {
-      height: var(--text-logo-height);
-      overflow: hidden;
-    }
-    .navbar-brand .text-only {
-      height: 100%;
-      width: auto;
-    }
+
+    /* Nawigacja */
     .navbar-nav {
       display: flex;
       align-items: center;
-      justify-content: center; 
+      justify-content: center;
       width: auto;
       gap: 10px;
     }
@@ -69,8 +66,10 @@
       padding: 20px 30px;
     }
     .navbar-nav .nav-link.active {
-      color: #005EA8 !important; /* Zmieniono z #007bff */
+      color: #005EA8 !important;
     }
+
+    /* Sekcja hero */
     .hero {
       position: relative;
       width: 100%;
@@ -94,13 +93,14 @@
       font-size: var(--hero-paragraph-font-size);
       font-weight: bold;
       margin-bottom: 20px;
-      color: #005EA8; /* Zmieniono z #007bff */
+      color: #005EA8;
     }
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 20px;
       color: black;
     }
+
     /* Formularz */
     .contact-form .form-control {
       margin-bottom: 15px;
@@ -109,14 +109,13 @@
       font-size: 0.9rem;
       line-height: 1.4;
     }
-    /* RESPONSYWNOŚĆ */
+
+    /* Responsywność */
     @media (max-width: 768px) {
       :root {
         --navbar-padding-horizontal: 5vw;
         --navbar-height: 5vh;
         --icon-logo-height: 5vh;
-        --text-logo-height: 5vh;
-        --text-logo-width-mobile: 50vw;
         --navbar-margin-top: 0;
         --hero-font-size-mobile: 7vw;
         --hero-paragraph-font-size-mobile: 5vw;
@@ -138,25 +137,11 @@
         justify-content: center;
         margin-bottom: 10px;
       }
-      .navbar-brand .logo-container {
-        height: var(--text-logo-height);
-        width: var(--text-logo-width-mobile);
-        display: flex;
-        align-items: center;
-      }
-      .navbar-brand .text-only {
-        height: auto;
-        width: 100%;
-      }
       .navbar-nav {
         display: flex;
         justify-content: center;
         flex-direction: row;
         margin: 0 auto;
-      }
-      .navbar-nav .nav-item {
-        flex: none;
-        text-align: center;
       }
       .hero {
         justify-content: center;
@@ -175,14 +160,16 @@
         font-size: var(--hero-p-font-size-mobile);
       }
     }
+
+    /* Animacja "mrugania" przycisku tel. */
     @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
+      0%   { opacity: 1; }
+      50%  { opacity: 0.5; }
       100% { opacity: 1; }
     }
     .call-link {
       display: inline-block;
-      color: #005EA8 !important; /* Zmieniono z #007bff */
+      color: #005EA8 !important;
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: bold;
@@ -197,18 +184,17 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="index.html">
+      <!-- Ikona/logo -->
       <img src="images/IconOnly.jpg" alt="Myjemy Dachy - ikona logo" class="icon-only">
-      <div class="logo-container">
-      </div>
     </a>
     <div class="collapse navbar-collapse show" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Strona<br>główna</a>
         </li>
-     <!--   <li class="nav-item">-->
-     <!--     <a class="nav-link" href="about.html">O nas</a>-->
-        </li>
+        <!--  <li class="nav-item">
+          <a class="nav-link" href="about.html">O nas</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="offer.html">Oferta</a>
         </li>
@@ -228,9 +214,10 @@
   <div class="hero">
     <div class="content">
       <h3>Skontaktuj się z nami!</h3>
-      <p><strong>Telefon:</strong> 123 456 789<br>
-         <strong>E-mail:</strong> <a href="mailto:kontakt@myjemy-dachy.pl">kontakt@myjemy-dachy.pl</a><br>
-         <strong>Adres:</strong> ul. Czysta 10, 00-000 Miasto
+      <p>
+        <strong>Telefon:</strong> 123 456 789<br>
+        <strong>E-mail:</strong> <a href="mailto:kontakt@myjemy-dachy.pl">kontakt@myjemy-dachy.pl</a><br>
+        <strong>Adres:</strong> ul. Czysta 10, 00-000 Miasto
       </p>
 
       <div class="contact-form">
