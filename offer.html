@@ -22,11 +22,13 @@
       --navbar-border-radius: 10px;
       --navbar-margin-top: 20px;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       font-size: 1.1rem;
       margin: 0;
     }
+
     .navbar {
       background-color: #ffffff;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -72,9 +74,31 @@
       color: #007bff !important;
     }
 
-    /* Sekcja hero */
+    /* PROMO BANNER */
+    .promo-banner {
+      margin: 0 auto;
+      margin-top: calc(20px + 10vh); /* Aby nie została zasłonięta przez navbar */
+      max-width: 90%;
+      background-color: #ffeb3b; /* Żółte tło, rzucające się w oczy */
+      color: #000;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      animation: blink 1.5s infinite ease-in-out;
+    }
+
+    /* ANIMACJA mrugania (wykorzystywana też w .call-link) */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
     .hero {
-      position: relative; /* WAŻNE: aby móc pozycjonować elementy wewnątrz absolutnie */
+      position: relative;
       width: 100%;
       min-height: 100vh;
       background: url('images/dach.jpg') no-repeat center center;
@@ -86,31 +110,12 @@
       color: black;
       padding-left: 10%;
     }
-
-    /* Promocyjny napis na tle zdjęcia */
-    .promo-hero-text {
-      position: absolute;    /* Unosimy tekst nad tło hero */
-      top: 20px;            /* Możesz dostosować pozycję */
-      left: 50%;            /* Wyśrodkuj w poziomie */
-      transform: translateX(-50%);
-      background: rgba(255, 255, 0, 0.8); /* Jasne tło, aby wybić napis */
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      animation: blink 1.5s infinite ease-in-out;
-      z-index: 1; /* Ponad półprzezroczystą sekcją .content */
-    }
-
     .hero .content {
       max-width: 900px;
       background: rgba(255, 255, 255, 0.7);
       padding: 20px;
       border-radius: 10px;
-      z-index: 0; /* Mniej od promo-hero-text, aby był pod spodem */
     }
-
     .hero h1 {
       font-size: var(--hero-font-size);
       font-weight: bold;
@@ -126,13 +131,6 @@
       font-size: 1.3rem;
       margin-bottom: 20px;
       color: black;
-    }
-
-    /* Animacja migotania */
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.6; }
-      100% { opacity: 1; }
     }
 
     /* RESPONSYWNOŚĆ */
@@ -184,6 +182,11 @@
         flex: none;
         text-align: center;
       }
+      .promo-banner {
+        margin-top: 10px; /* na mniejszych ekranach wystarczy mniejszy margines */
+        font-size: 1.4rem;
+        padding: 10px;
+      }
       .hero {
         justify-content: center;
         padding-left: 0;
@@ -202,14 +205,8 @@
       .hero p {
         font-size: var(--hero-p-font-size-mobile);
       }
-      .promo-hero-text {
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 1.2rem;
-        padding: 8px 15px;
-      }
     }
+
     .call-link {
       display: inline-block;
       color: #007bff !important;
@@ -237,9 +234,6 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Strona<br>główna</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="about.html">O nas</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link active" href="offer.html">Oferta</a>
         </li>
@@ -255,18 +249,13 @@
     </div>
   </nav>
 
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    Cena za m² już od 10 zł! Skontaktuj się z nami i zapytaj o szczegóły!
+  </div>
+
   <!-- Hero Section -->
   <div class="hero">
-
-    <!-- NAPIS PROMOCYJNY NA TLE -->
-    <div class="promo-hero-text">
-      Cena za m<sup>2</sup> już od 10 zł! 
-      <a href="contact.html" style="color: #000; text-decoration: underline; margin-left: 10px;">
-        Skontaktuj się z nami
-      </a>
-    </div>
-    <!-- KONIEC NAPISU PROMOCYJNEGO -->
-
     <div class="content">
       <h3>Nasza oferta</h3>
       <p>
