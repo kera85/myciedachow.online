@@ -13,6 +13,8 @@
 
   <style>
     :root {
+      --brand-color-dark: #005EA8;  /* ciemniejszy niebieski z logo */
+      --brand-color-light: #00B4E3; /* jaśniejszy turkus */
       --navbar-height: 10vh;
       --icon-logo-height: 10vh;
       --text-logo-height: 24vh;
@@ -69,7 +71,7 @@
       padding: 20px 30px;
     }
     .navbar-nav .nav-link.active {
-      color: #007bff !important;
+      color: var(--brand-color-dark) !important; /* ZMIANA */
     }
     .hero {
       position: relative;
@@ -99,7 +101,7 @@
       font-size: var(--hero-paragraph-font-size);
       font-weight: bold;
       margin-bottom: 20px;
-      color: #007bff;
+      color: var(--brand-color-dark); /* ZMIANA */
     }
     .hero p {
       font-size: 1.3rem;
@@ -109,6 +111,17 @@
     .hero .btn {
       font-size: 1.3rem;
     }
+    /* Nadpisanie kolorów .btn-primary (Bootstrap) */
+    .btn-primary {
+      background-color: var(--brand-color-dark);
+      border-color: var(--brand-color-dark);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #004080;
+      border-color: #004080;
+    }
+
     /* RESPONSYWNOŚĆ */
     @media (max-width: 768px) {
       :root {
@@ -180,7 +193,6 @@
         font-size: 3vw;
       }
     }
-    /* Animacja "mrugania" przycisku z telefonem (jeżeli chcesz zachować) */
     @keyframes blink {
       0% { opacity: 1; }
       50% { opacity: 0.5; }
@@ -188,7 +200,7 @@
     }
     .call-link {
       display: inline-block;
-      color: #007bff !important;
+      color: var(--brand-color-dark) !important; /* ZMIANA */
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: bold;
@@ -226,9 +238,6 @@
         <li class="nav-item">
           <a class="nav-link active" href="index.html">Strona<br>główna</a>
         </li>
-      <!-- <li class="nav-item"> --!>
-     <!--   <a class="nav-link" href="about.html">O nas</a> --!>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="offer.html">Oferta</a>
         </li>
@@ -236,7 +245,7 @@
           <a class="nav-link" href="contact.html">Kontakt</a>
         </li>
         <li class="nav-item text-center">
-          <a class="call-link" href="tel:+48123456789" style="color: #007bff!important;">
+          <a class="call-link" href="tel:+48123456789">
             <span><strong>Zadzwoń</strong><br>+48 123 456 789</span>
           </a>
         </li>
