@@ -70,16 +70,18 @@
     /* Sekcja hero */
     .hero {
       position: relative;
-      width: 100%;
-      height: 100vh;
+      /* Zamiast sztywnej wysokości: */
+      min-height: 100vh;
       background: url('images/dach.jpg') no-repeat center center;
       background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+
+      /* Usuwamy flex-centrowanie i dodajemy odstęp */
+      display: block;
       text-align: left;
       color: black;
-      padding-left: 10%;
+      
+      /* Najważniejsze - odstęp od góry */
+      padding: 120px 0 0 10%;
     }
 
     .hero .content {
@@ -88,7 +90,6 @@
       padding: 20px;
       border-radius: 10px;
     }
-
     .hero h1 {
       font-size: var(--hero-font-size);
       font-weight: bold;
@@ -109,7 +110,7 @@
       font-size: 1.3rem;
     }
 
-    /* Baner promocyjny (przeniesione z offer.html) */
+    /* Baner promocyjny */
     .promo-banner {
       position: absolute;
       top: 15%;
@@ -125,13 +126,13 @@
       z-index: 999;
       animation: blink 1.5s infinite ease-in-out;
     }
-
     @keyframes blink {
       0%   { opacity: 1; }
       50%  { opacity: 0.5; }
       100% { opacity: 1; }
     }
 
+    /* Responsywność */
     @media (max-width: 768px) {
       :root {
         --navbar-padding-horizontal: 5vw;
@@ -154,7 +155,6 @@
         display: block;
         text-align: center;
       }
-
       .navbar-brand {
         display: flex;
         align-items: center;
@@ -162,7 +162,6 @@
         margin-bottom: 5px;
         font-size: 0.9rem;
       }
-
       .navbar-nav {
         display: flex;
         justify-content: center;
@@ -179,9 +178,9 @@
         padding: 6px 8px;
       }
 
+      /* Hero w wersji mobilnej */
       .hero {
-        justify-content: center;
-        padding-left: 0;
+        padding: 120px 10px 0 10px; /* ewentualnie dostosuj */
         text-align: center;
       }
       .hero .content {
@@ -201,7 +200,7 @@
         font-size: 3vw;
       }
 
-      /* Wersja mobilna banera – przyklejenie go do dołu ekranu */
+      /* Wersja mobilna banera – przyklejenie do dołu ekranu */
       .promo-banner {
         position: fixed;
         top: auto;
