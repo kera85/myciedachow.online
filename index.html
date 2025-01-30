@@ -109,11 +109,15 @@
     .hero .btn {
       font-size: 1.3rem;
     }
-    /* RESPONSYWNOŚĆ */
+
+    /* =====================================
+       ZMIANY TYLKO W WERSJI MOBILNEJ
+       ===================================== */
     @media (max-width: 768px) {
       :root {
         --navbar-padding-horizontal: 5vw;
-        --navbar-height: 5vh;
+        /* Zmniejszona wysokość górnej belki mobilnej */
+        --navbar-height: 4vh; 
         --icon-logo-height: 5vh;
         --text-logo-height: 5vh;
         --text-logo-width-mobile: 50vw;
@@ -124,19 +128,23 @@
       }
       .navbar {
         width: 100%;
-        padding: 10px;
         left: 0;
         top: 0;
         border-radius: 0;
-        height: auto;
+        /* Ustawiamy konkretną wartość height zamiast auto, 
+           korzystając z nowego --navbar-height: 4vh */
+        height: var(--navbar-height);
+        padding: 5px; /* można też lekko zmniejszyć padding mobilny */
         display: block;
         text-align: center;
       }
+      /* Logo wyśrodkowane */
       .navbar-brand {
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
       .navbar-brand .logo-container {
         height: var(--text-logo-height);
@@ -158,6 +166,12 @@
         flex: none;
         text-align: center;
       }
+      /* Zmniejszone napisy i odstępy między nimi w wersji mobilnej */
+      .navbar-nav .nav-link {
+        font-size: 0.9rem; 
+        padding: 5px 10px; 
+      }
+
       .hero {
         justify-content: center;
         padding-left: 0;
@@ -180,6 +194,7 @@
         font-size: 3vw;
       }
     }
+
     /* Animacja "mrugania" przycisku z telefonem (jeżeli chcesz zachować) */
     @keyframes blink {
       0% { opacity: 1; }
@@ -203,7 +218,8 @@
         overflow-y: auto; 
       }
       .nav-link {
-        padding: 15px;
+        /* Ten padding może być dodatkowo nadpisany jeśli trzeba */
+        padding: 5px 10px;
       }
       .nav-item {
         margin: 5px 0;
