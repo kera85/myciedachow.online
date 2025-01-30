@@ -55,14 +55,6 @@
     }
 
     /* Nawigacja */
-    .navbar-nav {
-      display: flex;
-      align-items: center;
-      justify-content: center; 
-      width: auto;
-      gap: 10px;
-    }
-
     .navbar-nav .nav-link {
       color: #333 !important;
       font-weight: bold;
@@ -147,24 +139,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 5px;  /* Zmniejszony margines z 10px na 5px */
+        margin-bottom: 5px;  /* Zmniejszony margines */
         font-size: 0.9rem;   /* Przykładowe zmniejszenie czcionki */
       }
 
-      .navbar-nav {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin: 0 auto;
-      }
-
-      .navbar-nav .nav-item {
-        flex: none;
-        text-align: center;
-        margin: 0 5px;       /* Dodany margines między pozycjami menu */
-      }
-
-      /* Jeśli korzystasz z klas .nav-link do stylowania linków w menu */
+      /* Menu mobilne */
       .navbar-nav .nav-link {
         font-size: 0.9rem;   /* Zmniejszony rozmiar czcionki linków */
         padding: 6px 8px;    /* Mniejszy padding dla linków */
@@ -230,24 +209,53 @@
         margin: 5px 0;
       }
     }
+
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- Logo -->
     <a class="navbar-brand" href="index.html">
-      <!-- Ikona/logo -->
       <img src="images/IconOnly.jpg" alt="Myjemy Dachy - ikona logo" class="icon-only">
     </a>
 
-    <!-- Baner PROMOCJA -->
-    <span class="navbar-text" 
-          style="font-weight: bold; color: #005EA8; margin-left: 20px;">
-      cena za m2 już od 10 zł
-    </span>
-    <!-- Koniec banera -->
+    <!-- Przycisk do wersji mobilnej -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#navbarNav" 
+      aria-controls="navbarNav" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="collapse navbar-collapse show" id="navbarNav">
+    <!-- Rozwijane menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- Środkowy baner PROMOCJA (wyśrodkowany dzięki mx-auto) -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <span 
+            class="nav-link" 
+            style="
+              font-weight: bold; 
+              background-color: #005EA8; 
+              color: #fff; 
+              padding: 5px 10px; 
+              border-radius: 5px;
+            "
+          >
+            cena za m2 już od 10 zł
+          </span>
+        </li>
+      </ul>
+      <!-- Koniec banera -->
+
+      <!-- Pozostałe linki, wyrównane do prawej (ml-auto) -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link active" href="index.html">Strona<br>główna</a>
