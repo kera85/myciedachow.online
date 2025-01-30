@@ -72,9 +72,6 @@
       color: #007bff !important;
     }
 
-    /* Ustawiamy hero jako pozycję względną 
-       dzięki czemu element .promo-banner będzie 
-       "zakotwiczony" w obrębie sekcji hero */
     .hero {
       position: relative;
       width: 100%;
@@ -88,12 +85,33 @@
       color: black;
       padding-left: 10%;
     }
+
+    /* Baner promocyjny na tle zdjęcia */
+    .promo-banner {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 0, 0.8); /* półprzezroczyste żółte tło */
+      color: #000;
+      padding: 15px 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-radius: 8px;
+      z-index: 999;
+      animation: blink 1.5s infinite ease-in-out;
+    }
+
+    /* Treść w hero: dodajemy margin-top */
     .hero .content {
+      margin-top: 60px;    /* <-- kluczowa linijka zwiększająca odstęp */
       max-width: 900px;
       background: rgba(255, 255, 255, 0.7);
       padding: 20px;
       border-radius: 10px;
     }
+
     .hero h1 {
       font-size: var(--hero-font-size);
       font-weight: bold;
@@ -111,30 +129,13 @@
       color: black;
     }
 
-    /* Baner promocyjny na tle zdjęcia */
-    .promo-banner {
-      position: absolute;          /* pozycjonowanie absolutne w obrębie .hero */
-      top: 15%;                   /* odległość od górnej krawędzi hero */
-      left: 50%;                  /* wyśrodkuj względem osi X */
-      transform: translateX(-50%);/* przesunięcie, by baner był na środku */
-      background: rgba(255, 255, 0, 0.8); /* półprzezroczyste żółte tło */
-      color: #000;
-      padding: 15px 30px;
-      font-size: 2rem;
-      font-weight: bold;
-      border: 2px solid #000;
-      border-radius: 8px;
-      z-index: 999;               /* aby mieć pewność, że jest przed tłem */
-      animation: blink 1.5s infinite ease-in-out;
-    }
-
     @keyframes blink {
       0% { opacity: 1; }
       50% { opacity: 0.5; }
       100% { opacity: 1; }
     }
 
-    /* Responsywność */
+    /* RESPONSYWNOŚĆ */
     @media (max-width: 768px) {
       :root {
         --navbar-padding-horizontal: 5vw;
@@ -184,7 +185,7 @@
         text-align: center;
       }
       .promo-banner {
-        top: 10%;  /* nieco wyżej na mniejszych urządzeniach */
+        top: 10%;
         font-size: 1.4rem;
       }
       .hero {
@@ -193,6 +194,7 @@
         text-align: center;
       }
       .hero .content {
+        margin-top: 40px;  /* dostosuj w mobile, żeby nie było za ciasno */
         padding: 10px;
         max-width: 90%;
       }
@@ -234,9 +236,6 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Strona<br>główna</a>
         </li>
-     <!--   <li class="nav-item"> 
-          <a class="nav-link" href="about.html">O nas</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link active" href="offer.html">Oferta</a>
         </li>
