@@ -119,18 +119,21 @@
       font-size: 1.3rem;
     }
 
-    /* Dodany baner promocyjny (taki jak w pliku offer.html) */
+    /* Baner promocyjny */
     .promo-banner {
       position: absolute;
       top: 15%;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0, 180, 227, 0.8);
-      color: #000;
+      /* Zmieniony kolor tła na bardziej wyrazisty gradient */
+      background: linear-gradient(90deg, #FF4500 0%, #FF8C00 100%);
+      /* Zmiana koloru tekstu na biały dla lepszego kontrastu */
+      color: #fff;
       padding: 15px 30px;
       font-size: 2rem;
       font-weight: bold;
-      border: 2px solid #000;
+      /* Obramowanie też na biało, aby komponowało się z tłem */
+      border: 2px solid #fff;
       border-radius: 8px;
       z-index: 999;
       animation: blink 1.5s infinite ease-in-out;
@@ -216,7 +219,7 @@
 
       /* Baner w wersji mobilnej przeniesiony na dół */
       .promo-banner {
-        position: fixed;       /* Aby baner był przy dolnej krawędzi ekranu */
+        position: fixed;
         top: auto;
         bottom: 10px;
         left: 50%;
@@ -288,7 +291,7 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <!-- Baner promocyjny na tle zdjęcia (dodany) -->
+    <!-- Baner promocyjny -->
     <div class="promo-banner">
       Cena za m² już od 10 zł!
     </div>
