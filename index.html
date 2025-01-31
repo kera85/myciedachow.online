@@ -77,7 +77,8 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
+      /* Kluczowa zmiana: z height na min-height */
+      min-height: 100vh;
       background: url('images/dach.jpg') no-repeat center center;
       background-size: cover;
       display: flex;
@@ -119,7 +120,7 @@
       font-size: 1.3rem;
     }
 
-    /* Dodany baner promocyjny (taki jak w pliku offer.html) */
+    /* Baner promocyjny (taki sam jak w offer.html) */
     .promo-banner {
       position: absolute;
       top: 15%;
@@ -216,7 +217,7 @@
 
       /* Baner w wersji mobilnej przeniesiony na dół */
       .promo-banner {
-        position: fixed;       /* Aby baner był przy dolnej krawędzi ekranu */
+        position: fixed;
         top: auto;
         bottom: 10px;
         left: 50%;
@@ -225,7 +226,7 @@
       }
     }
 
-    /* Animacja "mrugania" przycisku z telefonem */
+    /* Animacja "mrugania" dla przycisku z telefonem */
     @keyframes blink {
       0%   { opacity: 1; }
       50%  { opacity: 0.5; }
@@ -288,7 +289,7 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <!-- Baner promocyjny na tle zdjęcia (dodany) -->
+    <!-- Baner promocyjny -->
     <div class="promo-banner">
       Cena za m² już od 10 zł!
     </div>
@@ -296,9 +297,10 @@
     <div class="content">
       <h3><span>Wysokociśnieniowe mycie elewacji i dachów – Profesjonalnie i w świetnej cenie!</span></h3>
       <p>
-        Zadbaj o czystość oraz estetyczny wygląd swojego domu lub firmy dzięki 
-        usługom mycia ciśnieniowego świadczonym przez nasz doświadczony zespół. 
-        Gwarantujemy konkurencyjne stawki oraz najwyższą jakość wykonania.
+        Zadbaj o czystość oraz estetyczny wygląd swojego domu lub firmy 
+        dzięki usługom mycia ciśnieniowego świadczonym przez nasz 
+        doświadczony zespół. Gwarantujemy konkurencyjne stawki oraz 
+        najwyższą jakość wykonania.
       </p>
       <a href="offer.html" class="btn btn-primary">Sprawdź ofertę</a>
     </div>
