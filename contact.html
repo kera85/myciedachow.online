@@ -87,7 +87,7 @@
       padding: 10% 10% 20px 10%;
     }
 
-    /* Baner promocyjny */
+    /* Baner promocyjny – ten sam styl co poprzednio */
     .promo-banner {
       position: absolute;
       top: 15%;
@@ -105,12 +105,10 @@
     }
 
     .hero .content {
-      /* Powiększony kontener */
-      max-width: 800px;
-      background: rgba(255, 255, 255, 0.8); /* nieco wyższa przezroczystość dla czytelności */
-      padding: 40px;
-      margin: 0 auto;       /* wyśrodkowanie w poziomie */
-      border-radius: 15px;  /* nieco większe zaokrąglenie */
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     .hero h3 {
@@ -216,7 +214,6 @@
       .hero .content {
         padding: 10px;
         max-width: 90%;
-        margin: 0 auto;
       }
 
       .hero h3 {
@@ -225,6 +222,7 @@
 
       .hero p {
         font-size: var(--hero-p-font-size-mobile);
+    
       }
     }
   </style>
@@ -272,7 +270,7 @@
       </p>
 
       <div class="contact-form">
-        <!-- Formularz (Formspree) -->
+        <!-- Przykładowy formularz (Formspree) -->
         <form id="contactForm" action="https://formspree.io/f/xeojqbwn" method="POST">
           <input type="text" name="name" class="form-control" placeholder="Imię" required>
           <input type="email" name="email" class="form-control" placeholder="Adres e-mail" required>
