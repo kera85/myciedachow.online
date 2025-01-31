@@ -77,12 +77,12 @@
     .hero {
       position: relative;
       width: 100%;
-      /* Kluczowa zmiana: z height na min-height */
-      min-height: 100vh;
+      min-height: 100vh; /* kluczowe: zamiast height: 100vh */
       background: url('images/dach.jpg') no-repeat center center;
       background-size: cover;
       display: flex;
-      align-items: center;
+      /* align-items: center;  usunięte */
+      align-items: flex-start; /* <-- DODANE */
       justify-content: flex-start;
       text-align: left;
       color: black;
@@ -90,7 +90,7 @@
     }
 
     .hero .content {
-      margin-top: 60px; 
+      margin-top: 60px; /* aby odległość od górnej belki była taka sama jak w offer.html */
       max-width: 900px;
       background: rgba(255, 255, 255, 0.7);
       padding: 20px;
@@ -226,7 +226,7 @@
       }
     }
 
-    /* Animacja "mrugania" dla przycisku z telefonem */
+    /* Animacja "mrugania" przycisku z telefonem */
     @keyframes blink {
       0%   { opacity: 1; }
       50%  { opacity: 0.5; }
@@ -289,7 +289,7 @@
 
   <!-- Hero Section -->
   <div class="hero">
-    <!-- Baner promocyjny -->
+    <!-- Baner promocyjny na tle zdjęcia -->
     <div class="promo-banner">
       Cena za m² już od 10 zł!
     </div>
