@@ -89,7 +89,6 @@
     }
 
     .hero .content {
-      /* Dodajemy margin-top, aby uzyskać podobny odstęp jak w pliku offer.html */
       margin-top: 60px; 
       max-width: 900px;
       background: rgba(255, 255, 255, 0.7);
@@ -118,6 +117,23 @@
 
     .hero .btn {
       font-size: 1.3rem;
+    }
+
+    /* Dodany baner promocyjny (taki jak w pliku offer.html) */
+    .promo-banner {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 180, 227, 0.8);
+      color: #000;
+      padding: 15px 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-radius: 8px;
+      z-index: 999;
+      animation: blink 1.5s infinite ease-in-out;
     }
 
     /* RESPONSYWNOŚĆ */
@@ -177,7 +193,7 @@
       }
 
       .hero .content {
-        margin-top: 20px; /* Ewentualnie można zmniejszyć w mobile, np. 20px */
+        margin-top: 20px;
         padding: 10px;
         max-width: 90%;
       }
@@ -196,6 +212,16 @@
 
       .hero .btn {
         font-size: 3vw;
+      }
+
+      /* Baner w wersji mobilnej przeniesiony na dół */
+      .promo-banner {
+        position: fixed;       /* Aby baner był przy dolnej krawędzi ekranu */
+        top: auto;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.4rem;
       }
     }
 
@@ -262,6 +288,11 @@
 
   <!-- Hero Section -->
   <div class="hero">
+    <!-- Baner promocyjny na tle zdjęcia (dodany) -->
+    <div class="promo-banner">
+      Cena za m² już od 10 zł!
+    </div>
+
     <div class="content">
       <h3><span>Wysokociśnieniowe mycie elewacji i dachów – Profesjonalnie i w świetnej cenie!</span></h3>
       <p>
