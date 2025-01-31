@@ -87,7 +87,7 @@
       padding: 10% 10% 20px 10%;
     }
 
-    /* Baner promocyjny – ten sam styl co poprzednio */
+    /* Baner promocyjny */
     .promo-banner {
       position: absolute;
       top: 15%;
@@ -161,7 +161,6 @@
         --navbar-height: 5vh;
         --icon-logo-height: 7vh;
         --navbar-margin-top: 0;
-
         --hero-font-size-mobile: 7vw;
         --hero-paragraph-font-size-mobile: 5vw;
         --hero-p-font-size-mobile: 4vw;
@@ -222,7 +221,11 @@
 
       .hero p {
         font-size: var(--hero-p-font-size-mobile);
-    
+      }
+
+      /* Ukrycie banera na urządzeniach mobilnych */
+      .promo-banner {
+        display: none;
       }
     }
   </style>
