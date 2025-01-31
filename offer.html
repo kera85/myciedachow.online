@@ -13,7 +13,7 @@
 
   <style>
     :root {
-      /* Kluczowe zmienne (bez zbędnych odniesień do tekstowego logo) */
+      /* Kluczowe zmienne */
       --navbar-height: 10vh;
       --icon-logo-height: 10vh;
       --hero-font-size: 3vw;
@@ -43,16 +43,17 @@
       overflow: hidden;
       border-radius: var(--navbar-border-radius);
     }
+
     .navbar-brand {
       display: flex;
       align-items: center;
     }
+
     .navbar-brand .icon-only {
       height: var(--icon-logo-height);
       margin-right: 10px;
     }
 
-    /* Nawigacja */
     .navbar-nav {
       display: flex;
       align-items: center;
@@ -60,11 +61,13 @@
       width: auto;
       gap: 10px;
     }
+
     .navbar-nav .nav-link {
       color: #333 !important;
       font-weight: bold;
       padding: 20px 30px;
     }
+
     .navbar-nav .nav-link.active {
       color: #005EA8 !important;
     }
@@ -90,12 +93,14 @@
       top: 15%;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0, 180, 227, 0.8);
-      color: #000;
+      /* Zastosowany taki sam wyrazisty gradient jak na poprzedniej stronie */
+      background: linear-gradient(90deg, #FF4500 0%, #FF8C00 100%);
+      color: #fff;
       padding: 15px 30px;
       font-size: 2rem;
       font-weight: bold;
-      border: 2px solid #000;
+      /* Białe obramowanie dla kontrastu */
+      border: 2px solid #fff;
       border-radius: 8px;
       z-index: 999;
       animation: blink 1.5s infinite ease-in-out;
@@ -109,17 +114,20 @@
       padding: 20px;
       border-radius: 10px;
     }
+
     .hero h1 {
       font-size: var(--hero-font-size);
       font-weight: bold;
       margin-bottom: 20px;
     }
+
     .hero h3 {
       font-size: var(--hero-paragraph-font-size);
       font-weight: bold;
       margin-bottom: 20px;
       color: #005EA8;
     }
+
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 20px;
@@ -148,7 +156,7 @@
 
       .navbar {
         width: 100%;
-        padding: 2px; /* Zmniejszony padding */
+        padding: 2px;
         left: 0;
         top: 0;
         border-radius: 0;
@@ -157,13 +165,12 @@
         text-align: center;
       }
 
-      /* Logo / nazwa w navbarze */
       .navbar-brand {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 5px;  /* Zmniejszony margines z 10px na 5px */
-        font-size: 0.9rem;   /* Przykładowe zmniejszenie czcionki */
+        margin-bottom: 5px;
+        font-size: 0.9rem;
       }
 
       .navbar-nav {
@@ -176,22 +183,22 @@
       .navbar-nav .nav-item {
         flex: none;
         text-align: center;
-        margin: 0 5px;       /* Dodany margines między pozycjami menu */
+        margin: 0 5px;
       }
 
       .navbar-nav .nav-link {
-        font-size: 0.9rem;   /* Zmniejszony rozmiar czcionki linków */
-        padding: 6px 8px;    /* Mniejszy padding dla linków */
+        font-size: 0.9rem;
+        padding: 6px 8px;
       }
 
       /* Baner w wersji mobilnej przeniesiony na dół */
       .promo-banner {
-        position: fixed;       /* Aby baner "trzymał się" dołu ekranu */
-        top: auto;            /* Nadpisanie wartości top */
-        bottom: 10px;         /* Odstęp od dolnej krawędzi */
+        position: fixed;
+        top: auto;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 1.4rem;    /* Opcjonalnie zmniejszony rozmiar czcionki w mobile */
+        font-size: 1.4rem;
       }
 
       .hero {
@@ -199,17 +206,21 @@
         padding-left: 0;
         text-align: center;
       }
+
       .hero .content {
         margin-top: 40px;
         padding: 10px;
         max-width: 90%;
       }
+
       .hero h1 {
         font-size: var(--hero-font-size-mobile);
       }
+
       .hero h3 {
         font-size: var(--hero-paragraph-font-size-mobile);
       }
+
       .hero p {
         font-size: var(--hero-p-font-size-mobile);
       }
@@ -223,6 +234,7 @@
       font-weight: bold;
       animation: blink 1.5s infinite ease-in-out;
     }
+
     .call-link:hover {
       text-decoration: underline;
     }
@@ -240,9 +252,6 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Strona<br>główna</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="about.html">O nas</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link active" href="offer.html">Oferta</a>
         </li>
